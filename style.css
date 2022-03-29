@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&display=swap');
 
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
 :root {
   --cor-destaque: rgb(255, 123, 0);
   --font-title:'Montserrat', sans-serif;
@@ -482,4 +484,53 @@ body {
   color: var(--cor-destaque);
   cursor: pointer;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.616);
+}
+
+footer {
+  height: 400px;
+  background-color: #141414;
+  display: flex;
+  justify-content: space-around;
+}
+
+footer section {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+footer h2, h3, p, a {
+  margin-bottom: 1rem;
+  color: white;
+}
+
+footer a:hover {
+  color: var(--cor-destaque);
+}
+
+.footer-bar {
+  border-right: 1px solid white;
+  padding-right: 5rem;
+}
+
+.social-media{
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.social-media i{
+  color: white;
+  height: 2.5rem;
+  width: 2.5rem;
+  font-size: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: color 0.5s;
+}
+
+.social-media i:hover{
+  color: var(--cor-destaque);
 }

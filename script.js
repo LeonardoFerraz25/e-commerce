@@ -5,13 +5,28 @@ const slider = document.querySelector('.scroll');
 const cart = document.querySelector('.carrinho');
 const containerProducts = document.querySelector('.items');
 const lupa = document.querySelector('#searchItem');
+const counter = document.querySelector('.item-counter')
+const cartlist = document.querySelector('.cart__items');
+const subtotal = document.querySelector('.total-price');
+const clearButton = document.querySelector('.empty-cart');
 let scrollAmount = 0;
+
+clearButton.addEventListener('click', () => {
+  subtotal.innerHTML = 0;
+  counter.innerHTML = 0;
+  cartlist.innerHTML = '';
+});
 
 openCart.addEventListener('click', () => {
   document.querySelector('.container-cartTitle').classList.toggle('show-title');
   openCart.classList.toggle('visible');
   cart.classList.toggle('show-cart');
 });
+
+const counterItens = () => {
+  const itens = document.querySelectorAll('.cart__item').length;
+  counter.innerHTML = itens;
+};
 
 backward.addEventListener('click', () => {
   slider.scrollTo({
@@ -33,6 +48,49 @@ forward.addEventListener('click', () => {
     })
   }
 })
+
+function cartItemClickListener(event) {
+  event.target.remove();
+  counterItens();
+  saveCartItems(cartlist.innerHTML);
+}
+
+function createCartItemElement({ sku, name, salePrice }) {
+  const li = document.createElement('li');
+  li.className = 'cart__item';
+  li.innerText = `SKU: ${sku} | NAME: ${name} | PRICE: $${salePrice}`;
+  li.addEventListener('click', (event) => {
+    event.target.remove();
+    counterItens();
+    
+    const total = Number(subtotal.innerHTML);
+    const valor = Number(salePrice);
+    const preço = total - valor;
+    subtotal.innerHTML = parseFloat(preço);
+  });
+  return li;
+}
+
+const totalprice = async (id) => {
+  const produto = await fetchItem(id);
+  const salePrice = produto.price;
+  const total = Number(subtotal.innerHTML);
+  const valor = Number(salePrice);
+  const preço = total + valor;
+  subtotal.innerHTML = parseFloat(preço);
+};
+
+const creatCartList = async (id) => {
+  const produto = await fetchItem(id);
+
+  const sku = produto.id;
+  const name = produto.title;
+  const salePrice = produto.price;
+
+  cartlist.appendChild(createCartItemElement({ sku, name, salePrice }));
+  totalprice(id);
+  counterItens();
+};
 
 function createProductImageElement(imageSource) {
   const div = document.createElement('div');

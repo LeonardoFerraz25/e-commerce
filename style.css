@@ -234,6 +234,7 @@ body {
 
 .material-icons {
   color: var(--cor-destaque);
+  cursor: pointer;
 }
 
 .slider button:hover {
@@ -292,12 +293,14 @@ body {
 .titulo-item {
   position: absolute;
   text-align: center;
-  background-color: #54545496;
-  backdrop-filter: blur(5px);
+  background-color: #5454547a;
+  backdrop-filter: blur(2px);
   padding: 0.3rem;
-  text-shadow: 1px 1px 15px rgb(196, 196, 196);
+  text-shadow: 1px 1px 15px rgb(131, 131, 131);
   display: none;
   height: 70%;
+  font-size: 20px;
+  width: 100%;
 }
 
 .item:hover {
@@ -313,7 +316,6 @@ body {
   cursor: pointer;
 }
 
-
 .item-wrapper {
   border-bottom: 1px solid rgb(196, 196, 196);
   width: 100%;
@@ -321,7 +323,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  
 }
 
 .item-wrapper img {
@@ -431,15 +432,20 @@ body {
   border-radius: 10px;
 }
 
-#carrinho {
+.carrinho {
   position: absolute;
   top: 60px;
   right: 0;
-  border: 1px solid;
+  border-left: 1px solid rgb(196, 196, 196);
+  border-bottom: 1px solid rgb(196, 196, 196);
   height: 90vh;
   width: 25.4rem;
   background-color: white;
   display: none;
+}
+
+.show-cart {
+  display: block;
 }
 
 .cart {

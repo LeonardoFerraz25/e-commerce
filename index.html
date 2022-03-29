@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="style.css">
   <script src="helpers/fetchProducts.js" defer></script>
   <script src="helpers/fetchItem.js" defer></script>
+  <script src="helpers/callProducts.js" defer></script>
   <title>Prólogo</title>
 </head>
 <body>
@@ -29,16 +30,16 @@
     <ul class="menu">
       <li id="categorias"> <i class="material-icons" style="color: black;" >arrow_drop_down</i> Categorias 
         <ul id="sub-categorias">
-          <li><a href="#">Eletrodomésticos</a></li>
-          <li><a href="#">Ferramentas</a></li>
-          <li><a href="#">Moda</a></li>
-          <li><a href="#">Informatica</a></li>
-          <li><a href="#">Esportes</a></li>
-          <li><a href="#">Acessrios para veículos</a></li>
+          <li id="ferramentas" ><a href="#produtos">Ferramentas</a></li>
+          <li id="eletrodomesticos" ><a href="#produtos">Eletrodomésticos</a></li>
+          <li id="moda" ><a href="#produtos">Moda</a></li>
+          <li id="informatica" ><a href="#produtos">Informatica</a></li>
+          <li id="esportes" ><a href="#produtos">Esportes</a></li>
+          <li id="veiculos" ><a href="#produtos">Acessrios para veículos</a></li>
         </ul>
       </li>
-      <li><a href="#">Ofertas</a></li>
-      <li><a href="#">Contatos</a></li>
+      <li id="ofertas"><a href="#produtos">Ofertas</a></li>
+      <li><a href="#contato">Contatos</a></li>
     </ul>
   </nav>
   <section id="promocoes">
@@ -89,7 +90,7 @@
   <section id="comfira">
     <h1>Comfira Tambem:</h1>
     <div class="CatCards" >
-      <div class="card">
+      <div id="eletro" class="card">
         <div class="img-background">
           <img src="img/background_home201802061207.jpg">
         </div>
@@ -97,38 +98,46 @@
           <img src="img/logoCat.jpg">
         </div>
         <h2>Eletrodomésticos</h2>
-        <p>ver produtos</p>
+        <a href="#produtos">
+          <p>ver produtos</p>
+        </a>
       </div>
 
-      <div class="card">
+      <div id="roupa" class="card">
         <div class="img-background">
-          <img src="img/background_home201802061207.jpg">
+          <img src="img/moda.jpg">
         </div>
         <div class="img-wrapper">
-          <img src="img/logoCat.jpg">
+          <img src="img/lacoste.png">
         </div>
         <h2>Moda</h2>
-        <p>ver produtos</p>
+        <a href="#produtos">
+          <p>ver produtos</p>
+        </a>
       </div>
-      <div class="card">
+      <div id="infor" class="card">
         <div class="img-background">
-          <img src="img/background_home201802061207.jpg">
+          <img src="img/informatica.jpg">
         </div>
         <div class="img-wrapper">
-          <img src="img/logoCat.jpg">
+          <img src="img/pc.png">
         </div>
-        <h2>Casa</h2>
-        <p>ver produtos</p>
+        <h2>Informatica</h2>
+        <a href="#produtos">
+          <p>ver produtos</p>
+        </a>
       </div>
-      <div class="card">
+      <div id="carros" class="card">
         <div class="img-background">
-          <img src="img/background_home201802061207.jpg">
+          <img src="img/consignacao-veiculo.png">
         </div>
         <div class="img-wrapper">
-          <img src="img/logoCat.jpg">
+          <img src="img/bmw.png">
         </div>
         <h2>Veículos</h2>
-        <p>ver produtos</p>
+        <a href="#produtos">
+          <p>ver produtos</p>
+        </a>
       </div>
     </div>
   </section>
@@ -145,9 +154,9 @@
       <p>Consumindo APi's Desenvolvido com Apenas HTML 5, CSS e JavaScript.</p>
     </section>
     <section>
-      <h2>Desenvolvido e testado por: <a href="#">Leonardo Ferraz</a></h2>
+      <h2>Desenvolvido e testado por: <a href="https://www.linkedin.com/in/leonardo-ferraz-149480228/" target="_blank">Leonardo Ferraz</a></h2>
       <h3>Contatos:</h3>
-      <div class="social-media">
+      <div id="contato" class="social-media">
         <a href="https://www.facebook.com/leolfn" target="_blank"><i class="fab fa-facebook"></i></a>
         <a href="https://github.com/LeonardoFerraz25" target="_blank" ><i class="fab fa-github"></i></a>
         <a href="https://www.linkedin.com/in/leonardo-ferraz-149480228" target="_blank" ><i class="fab fa-linkedin"></i></a>

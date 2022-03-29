@@ -44,13 +44,11 @@
 .title {
   color: rgb(221, 221, 221);
   font-size: 30px;
-  
 }
 
 #search{
   display: flex;
   align-items: center;
-  
 }
 
 .form-control {
@@ -79,10 +77,10 @@
   right: 0;
   display: flex;
   align-items: center;
-  background-color: var(--cor-destaque);
+  background-color: #343434;
   width: 3%;
   height: 100%;
-
+  z-index: 1;
 } 
 
 .show-title {
@@ -90,7 +88,6 @@
 }
 
 .container-cartTitle p {
-  z-index: 1;
   display: block;
   padding-left: 1rem;
   color: white;
@@ -114,7 +111,7 @@
   right: 61.5%;
   width: 39.5%;
   height: 15px;
-  background: var(--cor-destaque);
+  background: #343434;
   transform: skew(-45deg);
   z-index: 0;
 }
@@ -126,7 +123,7 @@
   right: 61.5%;
   width: 39.5%;
   height: 15px;
-  background: var(--cor-destaque);
+  background: #343434;
   transform: skew(45deg);
   z-index: 0;
 }
@@ -140,4 +137,61 @@
 
 .title strong {
   color: var(--cor-destaque);
+}
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid;
+  background-color: rgb(255, 123, 0);
+  color: #343434;
+}
+
+.menu li{
+  display: inline;
+  margin: 0.5rem 2rem;
+  padding-right: 5rem ;
+  border-right: 1px solid;
+}
+
+.menu a {
+  color: #343434;
+  text-decoration: none;
+}
+
+#categorias {
+  display: flex;
+  align-items: center;
+  border-left: 1px solid;
+  padding-left: 2rem;
+  cursor: pointer;
+  position: relative;
+}
+
+#categorias ul {
+  display: none;
+  position: absolute;
+  background-color: #343434; 
+  width: 300px;
+}
+
+#categorias li {
+  border: none;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+#categorias:hover ul {
+  display: flex;
+  flex-direction: column;
+  top: 1.5rem;
+
+}
+
+#sub-categorias li a {
+  color: white;
+}
+
+#sub-categorias li:hover {
+  background-color: var(--cor-destaque);
 }

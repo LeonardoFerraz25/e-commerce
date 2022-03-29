@@ -260,7 +260,8 @@
 }
 
 #comfira h1 {
-  margin: 1rem;
+  margin-top: 1rem;
+  padding-top: 2rem;
   padding-left: 5rem;
 }
 

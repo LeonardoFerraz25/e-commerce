@@ -198,7 +198,6 @@
 #promocoes {
   display: flex;
   flex-direction: column;
-  
   justify-content: center;
 }
 
@@ -251,4 +250,84 @@
 
 .scroll::-webkit-scrollbar {
   display: none;
+}
+
+#comfira {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgb(238, 238, 238);
+}
+
+#comfira h1 {
+  margin: 1rem;
+  padding-left: 5rem;
+}
+
+.CatCards {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 30rem;
+  width: 90%;
+  align-self: center;
+}
+
+.card {
+  width: 284px;
+  height: 340px;
+  display: flex;
+  flex-direction: column;
+  background-color: white ;
+  border-radius: 5px;
+  border-bottom: 1px solid rgb(196, 196, 196);
+  border-right: 1px solid rgb(196, 196, 196);
+  cursor: pointer;
+}
+
+.card h2 {
+  margin: auto;
+}
+
+.card p {
+  text-align: center;
+  margin-bottom: 5px;
+  color: #545454;
+}
+
+.card:hover {
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.616);
+}
+
+.card:hover p {
+  color: var(--cor-destaque);
+}
+.img-background {
+  width: 100%;
+  height: 95px;
+}
+
+.img-background img {
+  width: 100%;
+  height: 100%;
+  size: cover;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.img-wrapper {
+  border: 1px solid;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  align-self: center;
+  margin: -25px;
+}
+
+.img-wrapper img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
 }

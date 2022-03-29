@@ -185,7 +185,6 @@
   display: flex;
   flex-direction: column;
   top: 1.5rem;
-
 }
 
 #sub-categorias li a {
@@ -194,4 +193,62 @@
 
 #sub-categorias li:hover {
   background-color: var(--cor-destaque);
+}
+
+#promocoes {
+  display: flex;
+  flex-direction: column;
+  
+  justify-content: center;
+}
+
+#promocoes h1 {
+  margin: 1rem;
+  padding-left: 5rem;
+} 
+
+.slider {
+  display: flex;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.616);
+  align-items: center;
+  justify-content: space-between;
+  align-self: center;
+  width: 90%;
+  height: 15rem;
+}
+
+.slider button {
+  background-color: white;
+  border: none;
+  padding: 10px;
+  height: 100%;
+  
+}
+
+.material-icons {
+  color: var(--cor-destaque);
+}
+
+.slider button:hover {
+  cursor: pointer;
+  background-color: #24242436;
+
+}
+
+.cards {
+  border: 1px solid green;
+  height: 180px;
+  width: 200px;
+  margin: 1rem;
+  padding: 5rem;
+}
+
+.scroll {
+  display: flex;
+  overflow-x: hidden;
+
+}
+
+.scroll::-webkit-scrollbar {
+  display: none;
 }

@@ -1,7 +1,7 @@
 const openCart = document.querySelector('#openCart');
 const forward = document.querySelector('.forward');
 const backward = document.querySelector('.backward');
-const slider = document.querySelector('.scroll');
+const slider = document.querySelector('.slider');
 const cart = document.querySelector('.carrinho');
 const containerProducts = document.querySelector('.items');
 const lupa = document.querySelector('#searchItem');
@@ -31,7 +31,7 @@ const counterItens = () => {
 backward.addEventListener('click', () => {
   slider.scrollTo({
     top: 0 ,
-    left: (scrollAmount -= 1000),
+    left: (scrollAmount -= 900),
     behavior: "smooth"
   });
   if (scrollAmount < 0) {
@@ -43,7 +43,7 @@ forward.addEventListener('click', () => {
   if(scrollAmount <= slider.scrollWidth - slider.clientWidth) {
     slider.scrollTo({
       top: 0,
-      left: (scrollAmount += 1000),
+      left: (scrollAmount += 900),
       behavior: "smooth"
     })
   }
@@ -145,4 +145,4 @@ lupa.addEventListener('click', () => {
   createProductList(search);
 })
 
-window.onload = () => { createProductList(); };
+window.onload = () => { createProductList(); createProductListScroll(); };

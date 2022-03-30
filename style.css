@@ -100,7 +100,6 @@ body {
   font-size: 20px;
   font-weight: 700;
   z-index: 1;
-  margin-top: 1rem;
 }
 
 .container-cartTitle span {
@@ -181,6 +180,7 @@ body {
   position: absolute;
   background-color: #343434; 
   width: 300px;
+  z-index: 2;
 }
 
 #categorias li {
@@ -214,22 +214,44 @@ body {
   padding-left: 5rem;
 } 
 
+#rolagem {
+  display: flex;
+  width: 90%;
+  position: relative;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.616);
+}
+
 .slider {
   display: flex;
-  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.616);
   align-items: center;
   justify-content: space-between;
   align-self: center;
-  width: 90%;
+  width: 95%;
   height: 15rem;
+  position: relative;
+  overflow-x: hidden;
 }
 
-.slider button {
+#rolagem button {
   background-color: white;
   border: none;
   padding: 10px;
   height: 100%;
-  
+}
+
+.backward{
+  position: absolute;
+  left: 0;
+  z-index: 1;
+}
+
+.forward {
+  position: absolute;
+  right: 0;
+  z-index: 1;
 }
 
 .material-icons {
@@ -237,24 +259,65 @@ body {
   cursor: pointer;
 }
 
-.slider button:hover {
+#rolagem button:hover {
   cursor: pointer;
   background-color: #24242436;
-
+  
+}
+.scroll {
+  display: flex;  
 }
 
-.cards {
-  border: 1px solid green;
+.cards-scroll {
+  border-right: 1px solid rgb(196, 196, 196);
+  border-bottom: 1px solid rgb(196, 196, 196);
   height: 180px;
   width: 200px;
   margin: 1rem;
-  padding: 5rem;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  padding-bottom: 1rem;
 }
 
-.scroll {
-  display: flex;
-  overflow-x: hidden;
+.card-srcoll-titulo {
+  position: absolute;
+  text-align: center;
+  background-color: #5454547a;
+  backdrop-filter: blur(2px);
+  padding: 0.3rem;
+  text-shadow: 1px 1px 15px rgb(131, 131, 131);
+  display: none;
+  height: 100%;
+  font-size: 16px;
+  width: 100%;
+}
 
+.cards-scroll:hover {
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.616);
+  cursor: pointer;
+}
+
+.cards-scroll:hover .card-srcoll-titulo{
+  display: block;
+}
+
+.cards-scroll-wrapper {
+  height: 85%;
+  width: 100%;
+  border-bottom: #343434;
+}
+
+.cards-scroll-wrapper img {
+  width: 100%;
+  height: 100%;
+}
+
+.scroll-price {
+  font-size: 20px;
+  color: #545454;
+  font-weight: 600;
+  padding: 0.5rem;
 }
 
 #produtos {
@@ -395,6 +458,10 @@ body {
   color: #545454;
 }
 
+.card a {
+  text-decoration: none;
+}
+
 .card:hover {
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.616);
 }
@@ -442,6 +509,7 @@ body {
   width: 25.4rem;
   background-color: white;
   display: none;
+  z-index: 2;
 }
 
 .show-cart {
@@ -486,6 +554,7 @@ footer {
   background-color: #141414;
   display: flex;
   justify-content: space-around;
+  color: white;
 }
 
 footer section {
@@ -494,10 +563,6 @@ footer section {
   flex-direction: column;
 }
 
-footer h2, h3, p, a {
-  margin-bottom: 1rem;
-  color: white;
-}
 
 footer a:hover {
   color: var(--cor-destaque);

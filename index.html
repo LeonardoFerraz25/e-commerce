@@ -9,6 +9,8 @@
   <script src="helpers/fetchProducts.js" defer></script>
   <script src="helpers/fetchItem.js" defer></script>
   <script src="helpers/callProducts.js" defer></script>
+  <script src="helpers/sliderProduct.js" defer></script>
+  
   <title>Prólogo</title>
 </head>
 <body>
@@ -44,32 +46,28 @@
   </nav>
   <section id="promocoes">
     <h1>Confira algumas promoções :</h1>
-    <section class="slider">
+    <div id="rolagem">
       <button class="backward">
         <i class="material-icons">arrow_back_ios</i>
       </button>
-
-      <div class="scroll">
-        <div class="cards"><img src="#"> <p>teste</p></div>
-        <div class="cards"><img src="#"> <p>teste</p></div>
-        <div class="cards"><img src="#"> <p>teste</p></div>
-        <div class="cards"><img src="#"> <p>teste</p></div>
-        <div class="cards"><img src="#"> <p>teste</p></div>
-        <div class="cards" style="background-color: red;"><img src="#"> <p>teste</p></div>
-        <div class="cards"><img src="#"> <p>teste</p></div>
-        <div class="cards"><img src="#"> <p>teste</p></div>
-        <div class="cards"><img src="#"> <p>teste</p></div>
-        <div class="cards"><img src="#"> <p>teste</p></div>
-        <div class="cards"><img src="#"> <p>teste</p></div>
-        <div class="cards"><img src="#"> <p>teste</p></div>
-        <div class="cards"><img src="#"> <p>teste</p></div>
-        <div class="cards"><img src="#"> <p>teste</p></div>
-      </div>
-    
+      <section class="slider">
+        <div class="scroll">
+          <div class="cards-scroll">
+            <span class="card-srcoll-titulo"> teclado logitec</span>
+            <div class="cards-scroll-wrapper">
+              <img src="img/teclado.jpg">
+            </div>
+            <span class="scroll-price">R$ 200</span>
+          </div>
+          
+      
+        </div>
+      
+      </section>
       <button class="forward">
         <i class="material-icons">arrow_forward_ios</i>
       </button>
-    </section>
+    </div>
   </section>
 
   <section id="produtos">
@@ -163,6 +161,6 @@
      </div>
     </section>
   </footer>
-  <script src="script.js"></script>
+  <script src="script.js" ></script>
 </body>
 </html>

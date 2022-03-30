@@ -11,6 +11,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: all 0.3s;
 }
 
 body {
@@ -562,7 +563,6 @@ footer section {
   justify-content: center;
   flex-direction: column;
 }
-
 
 footer a:hover {
   color: var(--cor-destaque);

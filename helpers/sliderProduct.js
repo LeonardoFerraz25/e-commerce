@@ -33,7 +33,6 @@ function createProductScrollElement({name, image, price }) {
   section.appendChild(creatImgScrollCard(image));
   section.appendChild(createCustomElementScrollCard('span', 'scroll-price', `R$ ${price}`));
   
-
   return section;
 }
 

@@ -15,6 +15,7 @@ clearButton.addEventListener('click', () => {
   subtotal.innerHTML = 0;
   counter.innerHTML = 0;
   cartlist.innerHTML = '';
+  saveCartItems(cartlist.innerHTML);
 });
 
 openCart.addEventListener('click', () => {
@@ -53,6 +54,14 @@ function cartItemClickListener(event) {
   event.target.remove();
   counterItens();
   saveCartItems(cartlist.innerHTML);
+  saveCartItems(cartlist.innerHTML);
+}
+
+const subTotalPrice = (salePrice) => {
+  const total = Number(subtotal.innerHTML);
+  const valor = Number(salePrice);
+  const preço = total - valor;
+  subtotal.innerHTML = parseFloat(preço);
 }
 
 function createCartItemElement({ sku, name, salePrice }) {
@@ -62,11 +71,8 @@ function createCartItemElement({ sku, name, salePrice }) {
   li.addEventListener('click', (event) => {
     event.target.remove();
     counterItens();
-    
-    const total = Number(subtotal.innerHTML);
-    const valor = Number(salePrice);
-    const preço = total - valor;
-    subtotal.innerHTML = parseFloat(preço);
+    saveCartItems(cartlist.innerHTML);
+    subTotalPrice(salePrice);
   });
   return li;
 }
@@ -78,6 +84,7 @@ const totalprice = async (id) => {
   const valor = Number(salePrice);
   const preço = total + valor;
   subtotal.innerHTML = parseFloat(preço);
+  localStorage.setItem('subtotal', preço)
 };
 
 const creatCartList = async (id) => {
@@ -88,6 +95,7 @@ const creatCartList = async (id) => {
   const salePrice = produto.price;
 
   cartlist.appendChild(createCartItemElement({ sku, name, salePrice }));
+  saveCartItems(cartlist.innerHTML);
   totalprice(id);
   counterItens();
 };
@@ -126,7 +134,7 @@ function createProductItemElement({ sku, name, image, price }) {
   return section;
 }
 
-const createProductList = async (produto = 'tecnologia') => {
+const createProductList = async (produto = 'informatica') => {
   const produtos = await fetchProducts(produto);
 
   containerProducts.innerHTML = '';
@@ -145,4 +153,17 @@ lupa.addEventListener('click', () => {
   createProductList(search);
 })
 
-window.onload = () => { createProductList(); createProductListScroll(); };
+const restoreCartitens = () => {
+  const local = getSavedCartItems();
+  cartlist.innerHTML = local;
+  const itensSalvos = document.querySelector('.cart__items');
+  itensSalvos.addEventListener('click', cartItemClickListener);
+};
+
+const restoreSubtotal = () => {
+  const valor = localStorage.getItem('subtotal');
+  subtotal.innerHTML = valor;
+}
+
+window.onload = () => { createProductList(); 
+  restoreCartitens(); createProductListScroll(); counterItens(); restoreSubtotal(); };

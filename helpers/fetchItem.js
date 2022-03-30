@@ -8,9 +8,3 @@ const fetchItem = async (id) => {
 
   return item;
 };
-
-if (typeof module !== 'undefined') {
-  module.exports = {
-    fetchItem,
-  };
-}

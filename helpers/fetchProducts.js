@@ -8,9 +8,3 @@ const fetchProducts = async (produto) => {
 
   return itens;
 }
-
-if (typeof module !== 'undefined') {
-  module.exports = {
-    fetchProducts,
-  };
-}
